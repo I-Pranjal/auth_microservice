@@ -108,6 +108,7 @@ export const loginUser = async (req, res) => {
 export const getUserInfo = async (req, res) => {
     try{
         const userId = req.userId ; 
+        console.log("User ID from token: ", userId);
         const user = await User.findById(userId).select("-password -UnsaltedPassword");
         if(!user){
             return res.status(404).json(
