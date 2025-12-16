@@ -40,6 +40,7 @@ export const registerUser = async (req , res) => {
             name: user.name,
             contact: user.contact,
             password: user.UnsaltedPassword,
+            authID: user._id.toString()
         });
 
         res.status(201).json({
